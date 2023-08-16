@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('b7.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #220cec;
+            font-size: 24px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: #ff009d;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background: #e40bad;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        /* Styling specific to the doctor's form */
+        #doctorLoginForm {
+            display: none;
+        }
+
+        .switch-form {
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        .switch-form:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<form id="loginForm">
+    <h2>Doctor Login form</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <input type="submit" value="Doctor Login">
+</form>
+
+<form id="doctorLoginForm">
+    <h2>Doctor Login</h2>
+    <label for="doctorUsername">Doctor's Username:</label>
+    <input type="text" id="doctorUsername" name="doctorUsername" required><br><br>
+    
+    <label for="doctorPassword">Doctor's Password:</label>
+    <input type="password" id="doctorPassword" name="doctorPassword" required><br><br>
+    
+    <input type="submit" value="Doctor Login">
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    if (username === "doctor" && password === "1234") {
+        window.location.href = "homepage.html";
+    } else {
+        alert("Incorrect patient username or password. Please try again.");
+    }
+});
+
+document.getElementById("doctorLoginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    var doctorUsername = document.getElementById("doctorUsername").value;
+    var doctorPassword = document.getElementById("doctorPassword").value;
+    
+    if (doctorUsername === "doctor" && doctorPassword === "doctor") {
+        window.location.href = "homepage.html";
+    } else {
+        alert("Incorrect doctor's username or password. Please try again.");
+    }
+});
+</script>
+
+</body>
+</html>

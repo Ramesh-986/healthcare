@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('b2.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #480ee7;
+        }
+
+        #loginForm {
+            width: 300px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background: #00ff0d;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Patient Login</h2>
+
+<form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+    
+    <input type="submit" value="Login">
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    
+    // Get the values entered by the user
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    // In a real application, you would send these credentials to a server for verification
+    
+    // For this example, let's assume correct credentials are "ramesh" for username and "patient" for password
+    if (username === "ramesh" && password === "patient") {
+        // Redirect to the homepage
+        window.location.href = "homepage.html";
+    } else {
+        alert("Incorrect username or password. Please try again.");
+    }
+});
+</script>
+
+</body>
+</html>
